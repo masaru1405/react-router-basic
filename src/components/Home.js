@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 const Home = () => {
    return(
       <div>
@@ -7,6 +9,13 @@ const Home = () => {
 
          Morbi nibh nisl, placerat ut molestie et, tristique in purus. Proin tincidunt accumsan aliquet. Suspendisse lobortis tellus eu lorem vulputate tempus. Morbi dignissim a enim at condimentum. Nullam tristique risus non imperdiet tempus. Cras tellus nisi, dictum nec iaculis vel, euismod at odio. Praesent id mauris diam. Aenean dictum tempor felis condimentum placerat. Integer quis sapien ornare, pellentesque leo nec, interdum justo. Suspendisse egestas quis leo at elementum.
          </p>
+         <hr />
+         <h3>Featured Teachers</h3>
+         <ul>
+            <li><Link to="teachers/HTML/Tommy-Wingo">Tommy Wingo</Link></li>
+            <li><Link to="teachers/CSS/Ben-Tango">Ben Tango</Link></li>
+            <li><Link to="teachers/JavaScript/Alen-Smith">Alena Smith</Link></li>
+         </ul>
       </div>
    )
 }
