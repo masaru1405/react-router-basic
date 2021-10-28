@@ -3,21 +3,21 @@ import HTML from './courses/HTML'
 import CSS from './courses/CSS'
 import JS from './courses/JavaScript'
 
-const Courses = () => {
+const Courses = ({match}) => {
    return(
       <div>
          <h2>Courses</h2>
          <ul>
-            <li><NavLink to='/courses/HTML'>HTML</NavLink></li>
-            <li><NavLink to='/courses/css'>CSS</NavLink></li>
-            <li><NavLink to='/courses/javascript'>JS</NavLink></li>
+            <li><NavLink to={`${match.url}/html`}>HTML</NavLink></li>
+            <li><NavLink to={`${match.url}/css`}>CSS</NavLink></li>
+            <li><NavLink to={`${match.url}/javascript`}>JS</NavLink></li>
          </ul>
 
          {/*Routes*/}
-         <Route exact path="/courses" render={() => <Redirect to="/courses/HTML" />} />
-         <Route path="/courses/HTML" component={HTML} />
-         <Route path="/courses/css" component={CSS} />
-         <Route path="/courses/javascript" component={JS} />
+         <Route exact path={match.path} render={() => <Redirect to={`${match.path}/html`}/>} />
+         <Route path={`${match.path}/html`} component={HTML} />
+         <Route path={`${match.path}/css`} component={CSS} />
+         <Route path={`${match.path}/javascript`} component={JS} />
       </div>
 
    )
