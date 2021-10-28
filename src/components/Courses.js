@@ -1,4 +1,4 @@
-import {Route, NavLink} from 'react-router-dom'
+import {Route, NavLink, Redirect} from 'react-router-dom'
 import HTML from './courses/HTML'
 import CSS from './courses/CSS'
 import JS from './courses/JavaScript'
@@ -13,6 +13,8 @@ const Courses = () => {
             <li><NavLink to='/courses/javascript'>JS</NavLink></li>
          </ul>
 
+         {/*Routes*/}
+         <Route exact path="/courses" render={() => <Redirect to="/courses/HTML" />} />
          <Route path="/courses/HTML" component={HTML} />
          <Route path="/courses/css" component={CSS} />
          <Route path="/courses/javascript" component={JS} />
