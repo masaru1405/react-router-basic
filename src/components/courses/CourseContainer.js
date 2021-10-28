@@ -1,8 +1,7 @@
 import Course from './Course'
-import {HTMLCourses} from '../../data/courses'
 
-const HTML = () => {
-   let courses = HTMLCourses.map((course) => {
+const CourseContainer = (props) => {
+   let courses = props.data.map((course) => {
       return <Course
                title={course.title}
                description={course.description}
@@ -18,4 +17,4 @@ const HTML = () => {
    )
 }
 
-export default HTML
+export default CourseContainer
