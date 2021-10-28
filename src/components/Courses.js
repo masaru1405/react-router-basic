@@ -1,7 +1,8 @@
-import {Route, NavLink, Redirect} from 'react-router-dom'
+import {Route, NavLink, Redirect, Switch} from 'react-router-dom'
 import HTML from './courses/HTML'
 import CSS from './courses/CSS'
 import JS from './courses/JavaScript'
+import NotFound from './NotFound'
 
 const Courses = ({match}) => {
    return(
@@ -14,10 +15,13 @@ const Courses = ({match}) => {
          </ul>
 
          {/*Routes*/}
-         <Route exact path={match.path} render={() => <Redirect to={`${match.path}/html`}/>} />
-         <Route path={`${match.path}/html`} component={HTML} />
-         <Route path={`${match.path}/css`} component={CSS} />
-         <Route path={`${match.path}/javascript`} component={JS} />
+         <Switch>
+            <Route exact path={match.path} render={() => <Redirect to={`${match.path}/html`}/>} />
+            <Route path={`${match.path}/html`} component={HTML} />
+            <Route path={`${match.path}/css`} component={CSS} />
+            <Route path={`${match.path}/javascript`} component={JS} />
+            <Route component={NotFound} />
+         </Switch>
       </div>
 
    )
